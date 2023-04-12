@@ -14,6 +14,8 @@ import Binance from "./images/icons/binance.svg";
 import Ethereum from "./images/icons/ethereum.svg";
 import Recieve from "./images/icons/lower_left_arrow.svg";
 import Send from "./images/icons/upper_right_arrow.svg";
+import { Steps } from "./components/Home/Steps";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   //? variables
@@ -83,6 +85,7 @@ function App() {
   //? states
   const [filterOption, setFilterOption] = useState<string>("0");
   const [showFilter, setShowFilter] = useState<boolean>(false);
+  const [showReceive, setShowReceive] = useState<boolean>(false);
 
   //? functions
   const getIcon = (name: string) => {
@@ -100,6 +103,7 @@ function App() {
   return (
     <div className="bg-bg-primary w-full text-custom-white">
       <Navbar />
+      <Toaster />
       <div className="grid grid-cols-6 h-full">
         <div className="col-span-1">
           <Sidebar />
@@ -160,20 +164,24 @@ function App() {
                   <div className="flex justify-center items-center gap-1">
                     USD {item.value}
                   </div>
-                  <div className="flex justify-center items-center gap-2">
+                  <button
+                    onClick={() => setShowReceive(true)}
+                    className="flex justify-center items-center gap-2"
+                  >
                     <img className="h-4 w-4" src={Recieve} alt="recieve" />
                     <span className="text-[#8484F1]">RECEIVE</span>
-                  </div>
-                  <div className="flex justify-center items-center gap-2">
+                  </button>
+                  <button className="flex justify-center items-center gap-2">
                     <img className="h-4 w-4" src={Send} alt="send" />
                     <span className="text-secondary">SEND</span>
-                  </div>
+                  </button>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
+      {showReceive && <Steps setShowReceive={setShowReceive} />}
     </div>
   );
 }
