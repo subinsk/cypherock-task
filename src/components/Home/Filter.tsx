@@ -16,7 +16,7 @@ export const Filter: FC<{
   setFilterOption,
 }) => {
   return (
-    <div className="relative">
+    <div className="relative animate-openUp">
       <div
         onClick={() => setShowFilter(!showFilter)}
         className="flex items-center cursor-pointer hover:bg-bg-secondary duration-200 transition-all p-2 gap-2 relative"

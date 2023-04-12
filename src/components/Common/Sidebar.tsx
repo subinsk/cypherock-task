@@ -65,7 +65,7 @@ export const Sidebar: FC<{}> = ({}) => {
                   })}
                   <button className="rounded-full gap-2 flex items-center border-dashed text-gray-500 border-2 px-1.5 py-0.5 border-gray-500">
                     <AiOutlinePlus />
-                    <span>add wallet</span>
+                    <span className="whitespace-nowrap">add wallet</span>
                   </button>
                 </div>
               )}

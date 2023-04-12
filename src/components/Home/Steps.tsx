@@ -15,7 +15,7 @@ export const Steps: FC<{
 
   return (
     <div className="h-screen w-full fixed top-0 bg-black/70 flex items-center justify-center">
-      <div className="bg-bg-secondary relative flex flex-col gap-12 items-center w-1/2">
+      <div className="bg-bg-secondary animate-fadeIn relative flex flex-col gap-12 items-center w-1/2">
         <button
           onClick={() => setShowReceive(false)}
           className="text-gray-300 p-2 duration-150 transition-all hover:bg-gray-300/10 rounded-full absolute top-4 right-4"

@@ -10,6 +10,30 @@ module.exports = {
         "bg-primary": "#0A1018",
         "bg-secondary": "#161C23",
       },
+      keyframes: {
+        fadeIn: {
+          "0%": {
+            transform: "translateY(0.25rem)",
+            opacity: "0%",
+          },
+          "100%": {
+            transform: "translateY(0rem)",
+            opacity: "100%",
+          },
+        },
+        openUp: {
+          "0%": {
+            transform: "scaleY(0)",
+          },
+          "100%": {
+            transform: "scaleY(1)",
+          },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 0.4s ease-in-out ",
+        openUp: "openUp 0.4s ease-in-out",
+      },
     },
   },
   plugins: [],
